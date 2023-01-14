@@ -29,12 +29,7 @@ STATE = TgState(state=TgState.DEFAULT)
 
 class Command(BaseCommand):
     help = 'Runs telegram bot'
-    # tg_client = TgClient("5635881270:AAEmYHi5UWvLz4OXA-KqiJgY6Au8_Px32rY")
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.tg_client = TgClient("5635881270:AAEmYHi5UWvLz4OXA-KqiJgY6Au8_Px32rY")
-        self.offset = 0
+    tg_client = TgClient("5635881270:AAEmYHi5UWvLz4OXA-KqiJgY6Au8_Px32rY")
 
     def choose_category(self, msg: Message, tg_user: TgUser):
         goal_categories = GoalCategory.objects.filter(
